@@ -1,0 +1,12 @@
+Fonts bundled in this theme pack are licensed under the SIL Open Font License 1.1.
+
+- Chakra Petch — Copyright 2019 The Chakra Petch Project Authors
+  (https://github.com/cadsondemak/Chakra-Petch)
+- Space Mono — Copyright 2016 The Space Mono Project Authors
+  (https://github.com/googlefonts/spacemono)
+
+SIL OPEN FONT LICENSE Version 1.1 — full text: https://openfontlicense.org
+
+The fonts are provided "as is" without warranty of any kind. The OFL permits
+bundling and redistribution with a larger work provided the fonts are not sold
+by themselves and this license notice is retained.

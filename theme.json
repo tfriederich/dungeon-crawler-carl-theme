@@ -1,0 +1,35 @@
+{
+  "slug": "dungeon-crawler-carl",
+  "name": "Dungeon Crawler Carl",
+  "emoji": "🐈‍⬛",
+  "level": 2,
+  "formatVersion": 1,
+  "loaderIcons": ["zap", "star", "sparkles", "heart"],
+  "fonts": [
+    { "family": "Chakra Petch", "file": "chakra-petch-400.woff2", "weight": 400, "role": "sans" },
+    { "family": "Chakra Petch", "file": "chakra-petch-500.woff2", "weight": 500, "role": "sans" },
+    { "family": "Chakra Petch", "file": "chakra-petch-600.woff2", "weight": 600, "role": "sans" },
+    { "family": "Chakra Petch", "file": "chakra-petch-700.woff2", "weight": 700, "role": "sans" },
+    { "family": "Space Mono", "file": "space-mono-400.woff2", "weight": 400, "role": "mono" }
+  ],
+  "overlays": [
+    {
+      "id": "cast-a",
+      "src": "overlays/cast-a.html",
+      "position": "bottom-right",
+      "zIndex": 40,
+      "pointerEvents": true,
+      "animation": "continuous",
+      "trigger": "continuous"
+    },
+    {
+      "id": "cast-b",
+      "src": "overlays/cast-b.html",
+      "position": "bottom-left",
+      "zIndex": 40,
+      "pointerEvents": true,
+      "animation": "continuous",
+      "trigger": "continuous"
+    }
+  ]
+}
