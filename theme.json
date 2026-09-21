@@ -14,18 +14,9 @@
   ],
   "overlays": [
     {
-      "id": "cast-a",
-      "src": "overlays/cast-a.html",
+      "id": "cast",
+      "src": "overlays/cast.html",
       "position": "bottom-right",
-      "zIndex": 40,
-      "pointerEvents": true,
-      "animation": "continuous",
-      "trigger": "continuous"
-    },
-    {
-      "id": "cast-b",
-      "src": "overlays/cast-b.html",
-      "position": "bottom-left",
       "zIndex": 40,
       "pointerEvents": true,
       "animation": "continuous",
