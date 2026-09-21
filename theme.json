@@ -18,7 +18,7 @@
       "src": "overlays/cast.html",
       "position": "bottom-right",
       "zIndex": 40,
-      "pointerEvents": true,
+      "pointerEvents": false,
       "animation": "continuous",
       "trigger": "continuous"
     }
