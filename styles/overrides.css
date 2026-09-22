@@ -43,9 +43,9 @@ body::after {
   z-index: 0;
   pointer-events: none;
   background:
-    radial-gradient(420px 420px at 88% 12%, #6c45d80c 0%, #6c45d800 70%),
-    radial-gradient(520px 520px at 12% 90%, #a64d2f08 0%, #a64d2f00 70%),
-    radial-gradient(140% 120% at 50% 50%, #00000000 55%, #0000002b 100%);
+    radial-gradient(450px 450px at 90% 8%, #6c45d844 0%, #6c45d800 70%),
+    radial-gradient(550px 550px at 10% 92%, #a64d2f33 0%, #a64d2f00 70%),
+    radial-gradient(140% 120% at 50% 50%, #00000000 50%, #00000066 100%);
   animation: dccBreathe 16s ease-in-out infinite;
 }
 @keyframes dccBreathe {
