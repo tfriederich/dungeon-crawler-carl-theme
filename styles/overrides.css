@@ -68,10 +68,16 @@ body::after {
   border-right: 1px solid #1b1b23;
 }
 
-/* Chat area gets a faint magenta-to-black vignette, semi-transparent so the
-   cracked-glass body backdrop reads through behind the content. */
+/* Chat area carries the living-dungeon atmosphere directly, since body-level
+   glows sit behind the app's opaque panels and never show. Purple glow
+   top-right, warm dungeon glow bottom-left, magenta wash from the top, and a
+   soft vignette — all layered into this visible surface. */
 .chat-container {
-  background: radial-gradient(120% 80% at 50% 0%, #120009cc 0%, #000000d9 60%);
+  background:
+    radial-gradient(600px 600px at 92% 6%, #6c45d833 0%, #6c45d800 65%),
+    radial-gradient(680px 680px at 8% 96%, #a64d2f2b 0%, #a64d2f00 65%),
+    radial-gradient(120% 80% at 50% 0%, #12000999 0%, #000000e6 55%),
+    #000000;
 }
 
 /* Input area edged in neon on focus-adjacent contrast */
