@@ -28,34 +28,6 @@ button.primary {
   letter-spacing: 0.01em;
 }
 
-/* Living-dungeon ambient layer. body::after is a decorative pseudo-element, so
-   a full-screen fixed layer is allowed and stays click-through. Purple glow
-   top-right + warm dungeon glow bottom-left + soft vignette, all at the very
-   low opacities from the spec, pulsing extremely slowly. Sits behind content
-   (z-index 0) and never animates the editor surface itself. */
-body::after {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-  pointer-events: none;
-  background:
-    radial-gradient(450px 450px at 90% 8%, #6c45d844 0%, #6c45d800 70%),
-    radial-gradient(550px 550px at 10% 92%, #a64d2f33 0%, #a64d2f00 70%),
-    radial-gradient(140% 120% at 50% 50%, #00000000 50%, #00000066 100%);
-  animation: dccBreathe 16s ease-in-out infinite;
-}
-@keyframes dccBreathe {
-  0%, 100% { opacity: 0.7; }
-  50%      { opacity: 1; }
-}
-@media (prefers-reduced-motion: reduce) {
-  body::after { animation: none; opacity: 0.85; }
-}
-
 /* Topbar: pure-black chrome with a neon underline */
 .topbar {
   background: #050507;
@@ -68,16 +40,9 @@ body::after {
   border-right: 1px solid #1b1b23;
 }
 
-/* Chat area carries the living-dungeon atmosphere directly, since body-level
-   glows sit behind the app's opaque panels and never show. Purple glow
-   top-right, warm dungeon glow bottom-left, magenta wash from the top, and a
-   soft vignette — all layered into this visible surface. */
+/* Chat area: clean solid black */
 .chat-container {
-  background:
-    radial-gradient(600px 600px at 92% 6%, #6c45d833 0%, #6c45d800 65%),
-    radial-gradient(680px 680px at 8% 96%, #a64d2f2b 0%, #a64d2f00 65%),
-    radial-gradient(120% 80% at 50% 0%, #12000999 0%, #000000e6 55%),
-    #000000;
+  background: #000000;
 }
 
 /* Input area edged in neon on focus-adjacent contrast */
