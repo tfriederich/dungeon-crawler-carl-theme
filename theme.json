@@ -4,7 +4,7 @@
   "emoji": "🐈‍⬛",
   "level": 2,
   "formatVersion": 1,
-  "loaderIcons": ["zap", "star", "sparkles", "heart"],
+  "loaderIcons": ["zap", "star", "sparkles", "moon"],
   "fonts": [
     { "family": "Chakra Petch", "file": "chakra-petch-400.woff2", "weight": 400, "role": "sans" },
     { "family": "Chakra Petch", "file": "chakra-petch-500.woff2", "weight": 500, "role": "sans" },
