@@ -1,7 +1,7 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><style>
 html,body{margin:0;height:100%;width:100%;overflow:hidden;background:transparent;
  font-family:"Chakra Petch","Trebuchet MS",system-ui,sans-serif;pointer-events:none;}
-#dock{position:fixed;right:20px;bottom:20px;display:flex;flex-direction:column;
+#dock{position:fixed;right:20px;bottom:140px;display:flex;flex-direction:column;
  align-items:flex-end;gap:10px;pointer-events:none;
  opacity:0;transform:translateY(26px);
  transition:opacity .5s ease, transform .5s cubic-bezier(.2,.8,.2,1);}
@@ -16,6 +16,10 @@ html,body{margin:0;height:100%;width:100%;overflow:hidden;background:transparent
 #bubble.show{opacity:1;transform:translateY(0);}
 #bubble b{color:#ffe600;}
 @media (prefers-reduced-motion:reduce){#sprite{animation:none;}#dock{transition:opacity .3s;}}
+/* Hide the overlay entirely on small screens so it never covers chat controls */
+@media (max-width:900px),(max-height:700px){#dock{display:none !important;}}
+/* Shrink on medium screens to reduce footprint */
+@media (min-width:901px) and (max-width:1200px){#sprite{height:90px;}#bubble{max-width:190px;font-size:11px;padding:8px 10px;}}
 </style></head><body>
 <div id="dock"><div id="bubble" aria-hidden="true"></div>
 <img id="sprite" alt="" tabindex="0" aria-label="A Dungeon Crawler Carl character"></div>
