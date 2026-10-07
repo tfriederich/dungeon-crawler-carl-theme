@@ -16,10 +16,10 @@ html,body{margin:0;height:100%;width:100%;overflow:hidden;background:transparent
 #bubble.show{opacity:1;transform:translateY(0);}
 #bubble b{color:#ffe600;}
 @media (prefers-reduced-motion:reduce){#sprite{animation:none;}#dock{transition:opacity .3s;}}
-/* Hide the overlay entirely on small screens so it never covers chat controls */
-@media (max-width:900px),(max-height:700px){#dock{display:none !important;}}
-/* Shrink on medium screens to reduce footprint */
-@media (min-width:901px) and (max-width:1200px){#sprite{height:90px;}#bubble{max-width:190px;font-size:11px;padding:8px 10px;}}
+/* Hide only on genuinely tiny windows so it never covers chat controls there */
+@media (max-width:640px),(max-height:480px){#dock{display:none !important;}}
+/* Shrink on smaller screens to reduce footprint while staying visible */
+@media (max-width:1100px) and (min-width:641px){#sprite{height:92px;}#bubble{max-width:190px;font-size:11px;padding:8px 10px;}}
 </style></head><body>
 <div id="dock"><div id="bubble" aria-hidden="true"></div>
 <img id="sprite" alt="" tabindex="0" aria-label="A Dungeon Crawler Carl character"></div>
