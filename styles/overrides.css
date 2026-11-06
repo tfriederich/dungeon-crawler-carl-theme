@@ -1,11 +1,13 @@
 /* Dungeon Crawler Carl — neon pop-art accents.
    Only allowlisted surfaces: body (+ ::before/::after), button.primary,
-   .topbar, .sidebar, .chat-container, .message-bubble, .input-area, .code-block. */
+   .topbar, .sidebar, .chat-container, .message-bubble, .input-area, .code-block.
+   Every rule is scoped to one mode via the html data-theme attribute so the
+   dark look (neon on black) and the light look (comic ink on paper) never mix. */
 
-/* Cracked-glass backdrop. body::before is a decorative pseudo-element, so a
-   full-screen fixed layer is allowed and stays click-through. Inline data-URI
-   SVG (no external url), kept faint so it never hurts readability. */
-body::before {
+/* ===================== DARK: neon on black ===================== */
+
+/* Cracked-glass backdrop. Decorative pseudo-element, click-through, kept faint. */
+[data-theme="custom-dungeon-crawler-carl-dark"] body::before {
   content: "";
   position: fixed;
   top: 0;
@@ -23,36 +25,97 @@ body::before {
 }
 
 /* Primary button glows like a System prompt */
-button.primary {
+[data-theme="custom-dungeon-crawler-carl-dark"] button.primary {
   box-shadow: 0 0 0 1px #ff2d78, 0 0 16px #ff2d7866;
   letter-spacing: 0.01em;
 }
 
 /* Topbar: pure-black chrome with a neon underline */
-.topbar {
+[data-theme="custom-dungeon-crawler-carl-dark"] .topbar {
   background: #050507;
   border-bottom: 1px solid #ff2d78;
 }
 
 /* Sidebar sits on true black */
-.sidebar {
+[data-theme="custom-dungeon-crawler-carl-dark"] .sidebar {
   background: #000000;
   border-right: 1px solid #1b1b23;
 }
 
 /* Chat area: clean solid black */
-.chat-container {
+[data-theme="custom-dungeon-crawler-carl-dark"] .chat-container {
   background: #000000;
 }
 
 /* Input area edged in neon on focus-adjacent contrast */
-.input-area {
+[data-theme="custom-dungeon-crawler-carl-dark"] .input-area {
   border-top: 1px solid #26262f;
   background: #0a0a0f;
 }
 
 /* Code blocks read like terminal readouts */
-.code-block {
+[data-theme="custom-dungeon-crawler-carl-dark"] .code-block {
   border: 1px solid #26262f;
   box-shadow: inset 0 0 24px #00d9ff11;
+}
+
+/* ===================== LIGHT: comic ink on paper ===================== */
+/* The paperback-cover pop-art turned inside out: off-white newsprint,
+   halftone dots, hard black ink offsets and deep magenta as the System color. */
+
+/* Halftone dots + the same cracked-glass lines, in deep ink colors.
+   No background-color, so the paper bg shows through untinted. */
+[data-theme="custom-dungeon-crawler-carl-light"] body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.16;
+  background-repeat: no-repeat, repeat;
+  background-position: center, 0 0;
+  background-size: cover, 18px 18px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 1000'%3E%3Cg fill='none' stroke='%23d6006a' stroke-width='1.4' stroke-linecap='round'%3E%3Cpath d='M760 40 L788 300 L720 520 L800 700 L740 980'/%3E%3Cpath d='M788 300 L1040 210 L1320 120'/%3E%3Cpath d='M788 300 L560 240 L280 150'/%3E%3Cpath d='M720 520 L980 560 L1360 600'/%3E%3Cpath d='M720 520 L470 580 L150 640'/%3E%3Cpath d='M800 700 L1060 820 L1300 940'/%3E%3Cpath d='M800 700 L540 800 L300 930'/%3E%3Cpath d='M1040 210 L1180 420 L1360 600'/%3E%3Cpath d='M560 240 L430 430 L150 640'/%3E%3Cpath d='M980 560 L1060 820'/%3E%3Cpath d='M470 580 L540 800'/%3E%3C/g%3E%3Cg fill='none' stroke='%23007a96' stroke-width='1' stroke-linecap='round' opacity='0.8'%3E%3Cpath d='M788 300 L860 360 L840 470'/%3E%3Cpath d='M720 520 L680 470 L740 400'/%3E%3Cpath d='M1040 210 L980 300 L1020 380'/%3E%3Cpath d='M800 700 L860 640 L960 680'/%3E%3Cpath d='M560 240 L640 300 L600 380'/%3E%3C/g%3E%3Cg fill='%23d6006a'%3E%3Ccircle cx='788' cy='300' r='3.5'/%3E%3Ccircle cx='720' cy='520' r='3.5'/%3E%3Ccircle cx='800' cy='700' r='3.5'/%3E%3C/g%3E%3C/svg%3E"), url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18'%3E%3Ccircle cx='9' cy='9' r='1.3' fill='%23d6006a' opacity='0.35'/%3E%3C/svg%3E");
+}
+
+/* Primary button: magenta with a hard comic-panel ink offset */
+[data-theme="custom-dungeon-crawler-carl-light"] button.primary {
+  box-shadow: 0 0 0 2px #17171f, 3px 3px 0 0 #17171f;
+  letter-spacing: 0.01em;
+}
+
+/* Topbar: white paper with a thick magenta rule */
+[data-theme="custom-dungeon-crawler-carl-light"] .topbar {
+  background: #ffffff;
+  border-bottom: 2px solid #d6006a;
+}
+
+/* Sidebar: bright paper, ink-line edge */
+[data-theme="custom-dungeon-crawler-carl-light"] .sidebar {
+  background: #fbfbfd;
+  border-right: 1px solid #d7d7e0;
+}
+
+/* Chat area: newsprint with the halftone printed directly on it. The app's
+   panels cover body::before, so the visible texture has to live here. */
+[data-theme="custom-dungeon-crawler-carl-light"] .chat-container {
+  background-color: #f7f7fa;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18'%3E%3Ccircle cx='9' cy='9' r='1.3' fill='%23d6006a' opacity='0.16'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 18px 18px;
+}
+
+/* Input area: solid white. Inset line instead of a border so it adds no height. */
+[data-theme="custom-dungeon-crawler-carl-light"] .input-area {
+  background: #ffffff;
+  box-shadow: inset 0 1px 0 #d7d7e0;
+}
+
+/* Code blocks: printed panels with a cyan ink offset */
+[data-theme="custom-dungeon-crawler-carl-light"] .code-block {
+  border: 1px solid #17171f;
+  box-shadow: 3px 3px 0 0 #007a96;
 }
