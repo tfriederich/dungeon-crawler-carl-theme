@@ -4,10 +4,11 @@
    Every rule is scoped to one mode via the html data-theme attribute so the
    dark look (neon on black) and the light look (comic ink on paper) never mix. */
 
-/* ===================== DARK: neon on black ===================== */
-
-/* Cracked-glass backdrop. Decorative pseudo-element, click-through, kept faint. */
-[data-theme="custom-dungeon-crawler-carl-dark"] body::before {
+/* Shared backdrop layer for both modes. The selector must be plain
+   body::before (no mode prefix) for the installer to treat it as decorative
+   and allow the click-through, full-window layout. Each mode below only
+   supplies its own artwork. */
+body::before {
   content: "";
   position: fixed;
   top: 0;
@@ -16,6 +17,12 @@
   height: 100%;
   z-index: 0;
   pointer-events: none;
+}
+
+/* ===================== DARK: neon on black ===================== */
+
+/* Cracked-glass backdrop art, kept faint. */
+[data-theme="custom-dungeon-crawler-carl-dark"] body::before {
   opacity: 0.14;
   background-color: #000000;
   background-repeat: no-repeat;
@@ -66,14 +73,6 @@
 /* Halftone dots + the same cracked-glass lines, in deep ink colors.
    No background-color, so the paper bg shows through untinted. */
 [data-theme="custom-dungeon-crawler-carl-light"] body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-  pointer-events: none;
   opacity: 0.16;
   background-repeat: no-repeat, repeat;
   background-position: center, 0 0;
